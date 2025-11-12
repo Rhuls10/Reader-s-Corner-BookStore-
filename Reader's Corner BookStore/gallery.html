@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Readers' Corner Bookstore</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* === Base Styles === */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fceef5;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+header {
+  background: #e75480;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0;
+}
+
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffccd5;
+  text-decoration: underline;
+}
+
+/* === Gallery Section === */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+  padding: 1.25rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.15);
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.25rem 0.75rem rgba(255,105,180,0.4);
+}
+
+.caption {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #d6336c;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Pink borders */
+.reading-corner { border: 0.25rem solid #ff69b4; }
+.book-launch { border: 0.25rem solid #ff1493; }
+.children-section { border: 0.25rem solid #ff85c0; }
+
+/* === Lightbox Styles === */
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 0.5rem;
+}
+
+#closeLightbox {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Lightbox Arrows */
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: #ff66a3;
+  cursor: pointer;
+  user-select: none;
+  transform: translateY(-50%);
+  padding: 0.5rem;
+}
+
+#prevArrow { left: 20px; }
+#nextArrow { right: 20px; }
+
+/* === Footer === */
+footer {
+  background: #d6336c;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* === Responsive === */
+@media (max-width: 991px) {
+  .gallery { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  header h1 { font-size: 1.75rem; }
+}
+
+@media (max-width: 767px) {
+  .gallery { grid-template-columns: 1fr; gap: 0.75rem; }
+  body { font-size: 0.9rem; }
+  header h1 { font-size: 1.5rem; }
+  nav a { font-size: 0.9rem; }
+  .caption { font-size: 1rem; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Readers' Corner Gallery</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Books</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="enquiry.html">Enquiry</a>
+  </nav>
+</header>
+
+<section class="gallery">
+  <!-- Reading Corner -->
+  <div class="gallery-item reading-corner">
+    <div class="caption">Reading Corner</div>
+    <img src="images/reading-corner-1.avif" alt="Reading corner">
+    <img src="images/reading-corner-2.webp" alt="Reading corner">
+    <img src="images/reading-corner-3.avif" alt="Reading corner">
+  </div>
+
+  <!-- Book Launch Event -->
+  <div class="gallery-item book-launch">
+    <div class="caption">Book Launch Event</div>
+    <img src="images/book-launch-1.avif" alt="Book launch event">
+    <img src="images/book-launch-2.webp" alt="Book launch event">
+    <img src="images/book-launch-3.avif" alt="Book launch event">
+  </div>
+
+  <!-- Children's Section -->
+  <div class="gallery-item children-section">
+    <div class="caption">Children's Section</div>
+    <img src="images/children-section-1.avif" alt="Children's section">
+    <img src="images/children-section-2.webp" alt="Children's section">
+    <img src="images/children-section-3.avif" alt="Children's section">
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <span id="closeLightbox" onclick="closeLightbox()">×</span>
+  <span id="prevArrow" class="lightbox-arrow">&#8592;</span>
+  <span id="nextArrow" class="lightbox-arrow">&#8594;</span>
+  <img id="lightbox-img" src="">
+</div>
+
+<footer>
+  &copy; 2025 Readers' Corner Bookstore
+</footer>
+
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const prevArrow = document.getElementById('prevArrow');
+const nextArrow = document.getElementById('nextArrow');
+
+const images = document.querySelectorAll('.gallery-item img');
+let galleryImages = [];
+let currentIndex = 0;
+
+// Store all image sources in order
+images.forEach(img => galleryImages.push(img.src));
+
+// Open lightbox on click
+images.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    currentIndex = index;
+    showLightbox();
+  });
+});
+
+function showLightbox() {
+  lightbox.style.display = 'flex';
+  lightboxImg.src = galleryImages[currentIndex];
+}
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
+
+// Arrow navigation
+prevArrow.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  showLightbox();
+});
+
+nextArrow.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  showLightbox();
+});
+
+// Optional: close lightbox by clicking outside image
+lightbox.addEventListener('click', e => {
+  if(e.target === lightbox) closeLightbox();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>Enquiry - Readers' Corner</title>
+<meta name="description" content="Send your enquiry to Readers' Corner Bookstore. Reach out for any book requests, questions, or customer support." />
+<meta name="keywords" content="Readers' Corner, enquiry, contact, support, bookstore, books, help" />
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --soft-pink: #fceef5;
+    --card-pink: #ffeff6;
+    --accent-pink: #e75480;
+    --hot-pink: #d6336c;
+    --border-pink: #f4a7c8;
+  }
+
+  html,body{height:100%; margin:0; font-family: 'Poppins', Arial, sans-serif; background: var(--soft-pink); color:#333;}
+  header{background:var(--accent-pink); color:#fff; padding:1.25rem 1rem; text-align:center;}
+  header h1{margin:0; font-family:'Playfair Display', serif;}
+
+  nav{margin-top:0.5rem; display:flex; justify-content:center; gap:0.8rem; flex-wrap:wrap;}
+  nav a{color:white; text-decoration:none; font-weight:600; padding:0.35rem 0.6rem; border-radius:6px;}
+  nav a:hover{opacity:0.95;}
+
+  .enquiry-container{max-width:960px; margin:2rem auto; padding:1rem; text-align:center;}
+
+  .intro{margin-bottom:1rem; color:#222;}
+
+  .iframe-card{
+    background: white;
+    border-radius:14px;
+    padding:0.8rem;
+    border: 0.25rem solid var(--border-pink);
+    box-shadow: 0 10px 30px rgba(231,84,128,0.08);
+    overflow:hidden;
+  }
+
+  iframe.enquiry-iframe{
+    width:100%;
+    height:1400px;
+    border:0;
+    border-radius:10px;
+    display:block;
+  }
+
+  .thank-screen{
+    display:none;
+    margin-top:1rem;
+    padding:2rem;
+    border-radius:14px;
+    background: linear-gradient(180deg, var(--card-pink), #fff);
+    border: 0.25rem solid var(--accent-pink);
+    box-shadow: 0 14px 30px rgba(214,51,108,0.12);
+    position:relative;
+  }
+
+  .thank-screen h2{
+    color:var(--accent-pink);
+    margin:0 0 0.5rem 0;
+    font-family:'Playfair Display', serif;
+  }
+  .thank-screen p{margin:0.25rem 0 1rem 0; color:#6b2a45; font-weight:600; font-size:1.05rem;}
+
+  .btn-return{
+    display:inline-block;
+    background: linear-gradient(135deg, #e75480 0%, #d6336c 100%);
+    color:white;
+    padding:0.65rem 1.1rem;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    box-shadow: 0 8px 18px rgba(214,51,108,0.18);
+    transition: transform .18s ease, box-shadow .18s ease;
+    margin-top:0.75rem;
+  }
+  .btn-return:hover{ transform: translateY(-3px); box-shadow: 0 14px 28px rgba(214,51,108,0.25); }
+
+  .book-emoji {
+    position:absolute;
+    font-size:1.6rem;
+    opacity:0.0;
+    pointer-events:none;
+    transform:translateY(0) scale(0.9);
+    animation: floatUp 3.2s ease-in-out forwards;
+  }
+  @keyframes floatUp {
+    0% { opacity:0; transform:translateY(8px) scale(0.9); }
+    10% { opacity:1; }
+    100% { opacity:0; transform:translateY(-80px) scale(1.08); }
+  }
+
+  @media (max-width:800px){
+    iframe.enquiry-iframe{ height:1800px; }
+    .thank-screen{padding:1.25rem;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Readers' Corner</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Books</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="enquiry.html">Enquiry</a>
+  </nav>
+</header>
+
+<main class="enquiry-container">
+  <h2 class="intro">Send Us Your Enquiry</h2>
+  <p class="intro">Please complete the form below — after you submit, it will be replaced with a confirmation message.</p>
+
+  <div class="iframe-card" id="iframeCard">
+    <iframe id="gform" class="enquiry-iframe"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdRvpwQIi-SYViePpYwuelross-7iSySAUe1w0y06jtf8-IAw/viewform?embedded=true"
+        frameborder="0" marginheight="0" marginwidth="0">
+      Loading…
+    </iframe>
+  </div>
+
+  <div id="thankScreen" class="thank-screen" aria-hidden="true">
+    <div style="position:relative; min-height:90px;">
+      <h2>✅ Thank you!</h2>
+      <p>One of our staff members will reach out to you within 24–48 hours. 💌</p>
+      <a href="index.html" class="btn-return" id="returnBtn">Return to Home</a>
+    </div>
+  </div>
+</main>
+
+<footer style="text-align:center; padding:1rem; margin-top:2rem; background:var(--hot-pink); color:#fff;">
+  <p style="margin:0;">&copy; 2025 Readers' Corner Bookstore</p>
+</footer>
+
+<script>
+(function(){
+  const iframe = document.getElementById('gform');
+  const iframeCard = document.getElementById('iframeCard');
+  const thankScreen = document.getElementById('thankScreen');
+
+  let loadCount = 0;
+  iframe.addEventListener('load', () => {
+    loadCount++;
+    if (loadCount > 1) { showThankYou(); }
+  });
+
+  function showThankYou(){
+    iframeCard.style.display = 'none';
+    thankScreen.style.display = 'block';
+    thankScreen.setAttribute('aria-hidden', 'false');
+
+    createFloatingEmoji('📖', 18, 16, 1.0);
+    createFloatingEmoji('📚', 82, 26, 0.9);
+    createFloatingEmoji('💌', 50, 8, 1.1);
+  }
+
+  function createFloatingEmoji(char, leftPercent, topPercent, delayScale){
+    const el = document.createElement('div');
+    el.className = 'book-emoji';
+    el.textContent = char;
+    el.style.left = leftPercent + '%';
+    el.style.top = topPercent + '%';
+    el.style.animationDelay = (0.9 * delayScale) + 's';
+    thankScreen.appendChild(el);
+    setTimeout(()=>{ el.remove(); }, 3500);
+  }
+})();
+</script>
+</body>
+</html>

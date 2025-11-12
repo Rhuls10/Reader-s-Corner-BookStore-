@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Readers' Corner Bookstore</title>
+  <meta name="description" content="Learn about Readers' Corner bookstore, our story, mission, vision, team, and community involvement.">
+  <meta name="keywords" content="Readers' Corner, bookstore, books, about us, mission, vision, team, community">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --soft-pink: #fceef5;
+      --card-pink: #ffeff6;
+      --accent-pink: #e75480;
+      --hot-pink: #d6336c;
+      --border-pink: #f4a7c8;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      background: var(--soft-pink);
+      color: #333;
+    }
+
+    header {
+      background: var(--accent-pink);
+      color: #fff;
+      text-align: center;
+      padding: 1.25rem 0;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--hot-pink);
+    }
+
+    main.container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .card {
+      background: var(--card-pink);
+      border: 2px solid var(--border-pink);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 15px rgba(231,84,128,0.15);
+    }
+
+    h2 {
+      color: var(--accent-pink);
+      text-align: center;
+      margin-bottom: 0.75rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0.5rem 0 1rem 0;
+      text-align: justify;
+    }
+
+    .accordion-btn {
+      width: 100%;
+      background: #ffeff6;
+      border: 1px solid #e75480;
+      cursor: pointer;
+      padding: 1rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-weight: 600;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      transition: background 0.3s;
+    }
+
+    .accordion-btn:hover {
+      background: #ffe0f0;
+    }
+
+    .team-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #e75480;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: #fff0f5;
+      padding: 0 1rem;
+      border-left: 4px solid #e75480;
+      border-radius: 0 0 8px 8px;
+      margin-bottom: 1rem;
+    }
+
+    /* Image grid styling for About page images */
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+    .image-grid img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+    }
+
+    /* Bottom arrows */
+    .bottom-arrows {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 100;
+    }
+    .bottom-arrows a {
+      background-color: #ff66a3;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .bottom-arrows a:hover {
+      background-color: #ff3385;
+    }
+
+    @media (max-width:767px){
+      .card { padding: 1rem; }
+      nav a { padding: 0.4rem 0.6rem; }
+      .accordion-btn { flex-direction: column; align-items: flex-start; }
+      .team-pic { width: 100px; height: 100px; margin-bottom: 0.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>About Readers' Corner</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Books</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="enquiry.html">Enquiry</a>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h2>Our Story</h2>
+    <p>Founded in 2010, Readers' Corner started as a small family-run bookstore with a simple goal: to make books accessible and affordable for everyone in the community. Over the years, we’ve grown into a trusted hub for students, parents, and book lovers alike.</p>
+  </div>
+
+  <div class="card">
+    <h2>Our Mission</h2>
+    <p>Our mission is to nurture a culture of reading by providing a wide variety of books, from timeless classics to modern bestsellers, along with essential school textbooks and quality stationery.</p>
+  </div>
+
+  <div class="card">
+    <h2>Our Vision</h2>
+    <p>We aim to become the most loved local bookstore in South Africa, inspiring readers of all ages and creating a space where the community feels welcome, inspired, and connected.</p>
+  </div>
+
+  <div class="card">
+    <h2>Community Involvement</h2>
+    <p>Readers' Corner actively supports schools, literacy programs, and book donation drives. We believe in giving back, and each year we donate hundreds of books to children who don’t have access to reading materials.</p>
+  </div>
+
+  <!-- Accordion Team Section -->
+  <div class="card">
+    <h2>Meet Our Team</h2>
+
+    <div class="accordion">
+      <button class="accordion-btn">
+        <img src="images/male 2.jpg" alt="Tshepo Mokoena" class="team-pic">
+        Tshepo Mokoena – Founder & Store Manager
+      </button>
+      <div class="accordion-content">
+        <p>Tshepo started Readers' Corner in 2010 and has a passion for literature and community engagement.</p>
+      </div>
+
+      <button class="accordion-btn">
+        <img src="images/female 1.jpg" alt="Keoratile Dlamini" class="team-pic">
+        Keoratile Dlamini – Children’s Books Specialist
+      </button>
+      <div class="accordion-content">
+        <p>Keoratile specializes in children's literature and runs literacy programs for local schools.</p>
+      </div>
+
+      <button class="accordion-btn">
+        <img src="images/female 2.jpg" alt="Rhulani Mahlahlane" class="team-pic">
+        Rhulani Mahlahlane – Textbook & Stationery Coordinator
+      </button>
+      <div class="accordion-content">
+        <p>Rhulani manages our school textbooks and stationery, ensuring availability for all students.</p>
+      </div>
+
+      <button class="accordion-btn">
+        <img src="images/male 1.jpg" alt="Michael Roberts" class="team-pic">
+        Michael Roberts – Customer Service & Community Outreach
+      </button>
+      <div class="accordion-content">
+        <p>Michael leads customer service and coordinates community engagement events and programs.</p>
+      </div>
+    </div>
+  </div>
+
+  
+</main>
+
+<footer>
+  <p>&copy; 2025 Readers' Corner Bookstore</p>
+</footer>
+
+
+<script>
+  const acc = document.querySelectorAll('.accordion-btn');
+  acc.forEach(btn => btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+    const content = btn.nextElementSibling;
+    if(content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  }));
+</script>
+
+</body

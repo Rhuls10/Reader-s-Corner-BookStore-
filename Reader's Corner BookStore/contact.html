@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title> Readers' Corner Bookstore</title>
+<meta name="description" content="Get in touch with Readers' Corner Bookstore. Find our addresses, phone numbers, emails, and location maps for Johannesburg, Pretoria, and Cape Town.">
+<meta name="keywords" content="Readers' Corner, bookstore, contact, Johannesburg, Pretoria, Cape Town, address, phone, email">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --soft-pink: #fceef5;
+  --card-pink: #ffeff6;
+  --accent-pink: #e75480;
+  --hot-pink: #d6336c;
+  --border-pink: #f4a7c8;
+}
+
+html,body{height:100%; margin:0; font-family: 'Poppins', Arial, sans-serif; background: var(--soft-pink); color:#333;}
+header{background:var(--accent-pink); color:#fff; padding:1.25rem 1rem; text-align:center;}
+header h1{margin:0; font-family:'Playfair Display', serif;}
+
+nav{margin-top:0.5rem; display:flex; justify-content:center; gap:0.8rem; flex-wrap:wrap;}
+nav a{color:white; text-decoration:none; font-weight:600; padding:0.35rem 0.6rem; border-radius:6px;}
+nav a:hover{opacity:0.95;}
+
+.contact-container{max-width:960px; margin:2rem auto; padding:1rem; text-align:center;}
+.contact-section{
+  background:white;
+  border-radius:14px;
+  padding:1.25rem;
+  margin:1.5rem 0;
+  border:0.25rem solid var(--border-pink);
+  box-shadow: 0 10px 20px rgba(231,84,128,0.08);
+}
+.contact-section h3{color:var(--accent-pink); margin-bottom:0.5rem;}
+.contact-section p{margin:0.25rem 0; font-weight:600;}
+
+.map-card{
+  margin-top:1.5rem;
+  border-radius:14px;
+  border:0.25rem solid var(--border-pink);
+  box-shadow: 0 10px 20px rgba(231,84,128,0.08);
+  overflow:hidden;
+  background:white;
+  padding:1rem;
+}
+
+.map-card iframe{
+  width:100%;
+  height:350px;
+  border:0;
+  border-radius:10px;
+}
+
+form{
+  margin-top:2rem;
+  text-align:center;
+}
+
+form label{
+  display:block;
+  margin-top:0.75rem;
+  font-weight:600;
+  color:var(--accent-pink);
+}
+
+form input, form textarea, form select{
+  width:90%;
+  max-width:500px;
+  padding:0.75rem;
+  margin:0.5rem 0;
+  border-radius:10px;
+  border:1px solid var(--border-pink);
+  font-size:1rem;
+}
+
+form button{
+  padding:0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent-pink), var(--hot-pink));
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:0.5rem;
+}
+
+form button:hover{
+  opacity:0.95;
+}
+
+.error-msg{
+  color:red;
+  font-size:0.9rem;
+  font-weight:500;
+}
+
+#successMessage{
+  color:green;
+  font-weight:600;
+  margin-top:10px;
+  display:none;
+}
+
+footer{
+  text-align:center;
+  padding:1rem;
+  margin-top:2rem;
+  background:var(--hot-pink);
+  color:white;
+}
+
+@media (max-width:800px){
+  .map-card iframe{height:250px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Reader's corner</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Books</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="enquiry.html">Enquiry</a>
+  </nav>
+</header>
+
+<main class="contact-container">
+
+  <!-- Contact Form FIRST -->
+  <form id="contactForm" novalidate>
+    <h3 style="text-align:center; color:var(--accent-pink);">Send Us a Message</h3>
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required>
+    <div class="error-msg" id="nameError"></div>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+    <div class="error-msg" id="emailError"></div>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" placeholder="012-345-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+    <div class="error-msg" id="phoneError"></div>
+
+    <label for="subject">Message Type</label>
+    <select id="subject" name="subject" required>
+      <option value="">--Select--</option>
+      <option value="general">General Inquiry</option>
+      <option value="feedback">Feedback</option>
+      <option value="complaint">Complaint</option>
+    </select>
+    <div class="error-msg" id="subjectError"></div>
+
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+    <div class="error-msg" id="messageError"></div>
+
+    <button type="submit">Submit</button>
+    
+    <!-- Success message container -->
+    <div id="successMessage"></div>
+  </form>
+
+  <!-- Locations BELOW -->
+  <!-- Johannesburg -->
+  <div class="contact-section">
+    <h3>Readers' Corner – Johannesburg</h3>
+    <p>Address: 12 Book Lane, Johannesburg</p>
+    <p>Phone: 011-111-2222</p>
+    <p>Email: johannesburg@readerscorner.co.za</p>
+    <div class="map-card">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.123456789!2d28.0473!3d-26.2041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9508f123456789%3A0xabcdef!2sReaders%27%20Corner%2C%20Johannesburg!5e0!3m2!1sen!2sza!4v1698590000000!5m2!1sen!2sza"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Pretoria -->
+  <div class="contact-section">
+    <h3>Readers' Corner – Pretoria</h3>
+    <p>Address: 34 Novel Avenue, Pretoria</p>
+    <p>Phone: 012-333-4444</p>
+    <p>Email: pretoria@readerscorner.co.za</p>
+    <div class="map-card">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.123456789!2d28.2194!3d-25.7479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956789abcdef%3A0xabcdef!2sReaders%27%20Corner%2C%20Pretoria!5e0!3m2!1sen!2sza!4v1698590000001!5m2!1sen!2sza"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Cape Town -->
+  <div class="contact-section">
+    <h3>Readers' Corner – Cape Town</h3>
+    <p>Address: 56 Story Street, Cape Town</p>
+    <p>Phone: 021-555-6666</p>
+    <p>Email: capetown@readerscorner.co.za</p>
+    <div class="map-card">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.123456789!2d18.4232!3d-33.9249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcdefabcdef%3A0xabcdef!2sReaders%27%20Corner%2C%20Cape%20Town!5e0!3m2!1sen!2sza!4v1698590000002!5m2!1sen!2sza"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2025 Readers' Corner Bookstore</p>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+
+  // Clear previous errors
+  ['nameError','emailError','phoneError','subjectError','messageError'].forEach(id => document.getElementById(id).innerText='');
+
+  let valid = true;
+
+  // Name validation
+  const name = document.getElementById('name').value.trim();
+  if(name.length < 2){
+    document.getElementById('nameError').innerText = "Name must be at least 2 characters.";
+    valid = false;
+  }
+
+  // Email validation
+  const email = document.getElementById('email').value.trim();
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if(!email.match(emailPattern)){
+    document.getElementById('emailError').innerText = "Enter a valid email.";
+    valid = false;
+  }
+
+  // Phone validation
+  const phone = document.getElementById('phone').value.trim();
+  const phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+  if(!phone.match(phonePattern)){
+    document.getElementById('phoneError').innerText = "Phone format: 012-345-6789";
+    valid = false;
+  }
+
+  // Subject validation
+  const subject = document.getElementById('subject').value;
+  if(subject === ''){
+    document.getElementById('subjectError').innerText = "Please select a message type.";
+    valid = false;
+  }
+
+  // Message validation
+  const message = document.getElementById('message').value.trim();
+  if(message.length < 10){
+    document.getElementById('messageError').innerText = "Message should be at least 10 characters.";
+    valid = false;
+  }
+
+  // Show success message
+  if(valid){
+    document.getElementById('successMessage').innerText = "Thank you for contacting Readers' Corner! Your message has been submitted.";
+    document.getElementById('successMessage').style.display = 'block';
+    document.getElementById('contactForm').reset();
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books | Readers' Corner Bookstore</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---- Header (matches gallery.html & index.html) ---- */
+    header {
+      background: #e75480;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 2rem;
+      margin: 0;
+    }
+    nav {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffccd5;
+      text-decoration: underline;
+    }
+
+    /* ---- Body & Layout ---- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fceef5;
+      color: #333;
+      line-height: 1.6;
+    }
+    main { padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #d6336c;
+      text-align: center;
+      margin: 2.5rem 0 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    /* ---- Product Grid ---- */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .book-item {
+      background: white;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.15);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .book-item:hover {
+      transform: translateY(-5px);
+    }
+    .book-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-bottom: 3px solid #ff69b4;
+    }
+    .book-item p {
+      margin: 1rem;
+      font-weight: 600;
+      color: #d6336c;
+      font-size: 1.1rem;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      background: #d6336c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 991px) {
+      header h1 { font-size: 1.75rem; }
+      .grid-container { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    }
+    @media (max-width: 767px) {
+      header h1 { font-size: 1.5rem; }
+      nav a { font-size: 0.9rem; }
+      .book-item img { height: 250px; }
+      h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Readers' Corner</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html" class="active">Books</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="enquiry.html">Enquiry</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>Fiction</h2>
+  <div class="grid-container">
+    <div class="book-item">
+      <img src="images/the great gatsby.avif" alt="The Great Gatsby">
+      <p>The Great Gatsby – R400</p>
+    </div>
+    <div class="book-item">
+      <img src="images/pride and prejudice.avif" alt="Pride and Prejudice">
+      <p>Pride and Prejudice – R350</p>
+    </div>
+  </div>
+
+  <h2>School Textbooks</h2>
+  <div class="grid-container">
+    <div class="book-item">
+      <img src="images/mathematics book.avif" alt="Mathematics Grade 10">
+      <p>Mathematics Grade 10 – R350</p>
+    </div>
+    <div class="book-item">
+      <img src="images/science 'book'.avif" alt="Life Sciences Grade 12">
+      <p>Life Sciences Grade 12 – R400</p>
+    </div>
+  </div>
+
+  <h2>Stationery</h2>
+  <div class="grid-container">
+    <div class="book-item">
+      <img src="images/notebook.avif" alt="Notebook">
+      <p>Notebook – R150</p>
+    </div>
+    <div class="book-item">
+      <img src="images/pen pack.avif" alt="Pen Pack">
+      <p>Pen Pack – R80</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 Readers' Corner Bookstore
+</footer>
+
+</body>
+</html>

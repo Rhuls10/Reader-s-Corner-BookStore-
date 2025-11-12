@@ -1,0 +1,21 @@
+# =========================
+# Readers' Corner Robots.txt
+# =========================
+
+# Applies to all search engine bots
+User-agent: *
+
+# BLOCK folders that should not be indexed
+Disallow: /scripts/       # JS files used for functionality (optional)
+Disallow: /private/       # Any private or temporary pages
+Disallow: /test/          # Any testing pages
+
+# ALLOW folders that should be indexed
+Allow: /images/           # Images folder should be crawlable
+Allow: /css/              # CSS folder is optional, helps styling render in search preview
+
+# Block specific pages if needed
+# Disallow: /admin.html    # example if you have an admin page
+
+# Sitemap location (helps search engines find all pages)
+Sitemap: https://www.readerscorner.co.za/sitemap.xml

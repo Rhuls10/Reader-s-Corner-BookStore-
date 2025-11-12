@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Readers' Corner Bookstore | Home</title>
+  <meta name="description" content="Welcome to Readers' Corner Bookstore. Find books, stationery, and more.">
+  <meta name="keywords" content="Readers' Corner, bookstore, books, stationery, novels">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---- Header (matches gallery.html exactly) ---- */
+    header {
+      background: #e75480;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 2rem;
+      margin: 0;
+    }
+    nav {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ffccd5;
+      text-decoration: underline;
+    }
+
+    /* ---- Body & basic layout ---- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fceef5;
+      color: #333;
+      line-height: 1.6;
+    }
+    main { padding: 2rem 1rem; }
+    .hero { text-align: center; margin-bottom: 2rem; }
+    .hero h2 { margin-bottom: 0.5rem; }
+
+    /* ---- Image grid (your 5 photos) ---- */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.75rem;
+      box-shadow: 0 0.25rem 0.625rem rgba(0,0,0,0.15);
+      transition: transform .3s ease;
+    }
+    .image-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* ---- Footer (matches gallery) ---- */
+    footer {
+      background: #d6336c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* ---- Responsive tweaks ---- */
+    @media (max-width: 991px) {
+      header h1 { font-size: 1.75rem; }
+    }
+    @media (max-width: 767px) {
+      header h1 { font-size: 1.5rem; }
+      nav a { font-size: 0.9rem; }
+      .image-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Readers' Corner</h1>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Books</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    <a href="enquiry.html">Enquiry</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>Welcome to Readers' Corner</h2>
+    <p>Your trusted local bookstore for all your reading needs — from novels to study guides, we’ve got something for everyone!</p>
+  </section>
+
+  <section>
+    <h2 style="text-align:center;">Discover Our Collections</h2>
+    <p style="text-align:center; max-width:800px; margin:0 auto 2rem;">
+      Explore a wide variety of fiction, educational books, and stationery essentials for students and avid readers alike.
+    </p>
+  </section>
+
+  <!-- ==== YOUR IMAGE GRID ==== -->
+  <section class="image-grid">
+    <img src="images/bookstore.avif" alt="Book 1">
+    <img src="images/bookstore 2.avif" alt="Book 2">
+    <img src="images/bookstore 3.webp" alt="Book 3">
+    <img src="images/bookstore 4.avif" alt="Book 4">
+    <img src="images/bookstore 5.avif" alt="Book 5">
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Readers' Corner Bookstore
+</footer>
+
+</body>
+</html>
